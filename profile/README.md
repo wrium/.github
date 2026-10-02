@@ -28,63 +28,6 @@ A minimalist JavaScript library for building reactive user interfaces with decla
 * 🪶 **Ultra-Lightweight**: Only **~10.9 KB** minified for the complete core.
 * 🛡️ **TypeScript Ready**: Ships with native, fully-typed `.d.ts` declaration files with proper generics (`ref<T>`, `computed<T>`).
 
----
-
-## 🚀 Quick Start in 30 Seconds
-
-### Option 1: Direct in HTML (Zero Build Tools)
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Wrium App</title>
-</head>
-<body>
-  <div id="app">
-    <h1>{{ title }}</h1>
-    <p>Count is: <strong>{{ count }}</strong></p>
-    <button @click="count.value++">Increment</button>
-  </div>
-
-  <script type="module">
-    import { createApp, ref } from 'https://unpkg.com/@wrium/wrium/dist/1.0.0/wrium.es.js';
-
-    createApp(() => {
-      const title = ref('Hello Wrium!');
-      const count = ref(0);
-      return { title, count };
-    }).mount('#app');
-  </script>
-</body>
-</html>
-```
-
-### Option 2: Via npm / bundler
-
-```bash
-npm install @wrium/wrium
-# or
-bun add @wrium/wrium
-```
-
-```javascript
-import { createApp, ref, computed } from '@wrium/wrium';
-
-createApp(() => {
-  const search = ref('');
-  const items = ref(['React', 'Vue', 'Svelte', 'Wrium']);
-
-  const filtered = computed(() =>
-    items.value.filter(item => item.toLowerCase().includes(search.value.toLowerCase()))
-  );
-
-  return { search, filtered };
-}).mount('#app');
-```
-
----
 
 ## 📦 The Wrium Ecosystem
 
